@@ -1,0 +1,215 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+        <title>P4-VR</title>
+        <meta name="description" content="Curved Images - A-Frame">
+        <link rel="stylesheet" href="/npm/leaflet/dist/leaflet.css" />
+        <link rel="stylesheet" href="/npm/leaflet-contextmenu/dist/leaflet.contextmenu.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
+         <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
+         <script src="http://d3js.org/d3.v4.min.js"></script>
+         <script src="/npm/ramda/dist/ramda.min.js"></script>
+         <script src="/npm/leaflet/dist/leaflet.js"></script>
+         <script src="/npm/leaflet-contextmenu/dist/leaflet.contextmenu.js"></script>
+         <script src="https://unpkg.com/leaflet-image@latest/leaflet-image.js"></script>
+         <script src="/npm/requirejs/require.js"></script>
+    </head>
+    <body>
+        <a-scene>
+            <a-assets>
+                <img id="shadow2" src="images/radial-shadow-2.png">
+                <img id="ui2" src="images/cova-sidebar1.png">
+                <img id="usa" src="images/usa.png">
+                <img id="uk" src="images/uk.png">
+                <img id="china" src="images/china.png">
+                <img id="vr" src="images/dashvr.png">
+                <img id="all-map" src="images/all-map.png">
+                <img id="all-side-panel1" src="images/all-side-panel1.png">
+                <img id="all-side-panel2" src="images/all-side-panel2.png">
+                <img id="all-timeline" src="images/all-timeline.png">
+                <img id="usa-map" src="images/us-map.png">
+                <img id="usa-side-panel1" src="images/us-side-panel1.png">
+                <img id="usa-side-panel2" src="images/us-side-panel2.png">
+                <img id="usa-timeline" src="images/us-timeline.png">
+                <img id="uk-map" src="images/uk-map.png">
+                <img id="uk-side-panel1" src="images/uk-side-panel1.png">
+                <img id="uk-side-panel2" src="images/uk-side-panel2.png">
+                <img id="uk-timeline" src="images/uk-timeline.png">
+                <img id="china-map" src="images/china-map.png">
+                <img id="china-side-panel1" src="images/china-side-panel1.png">
+                <img id="china-side-panel2" src="images/china-side-panel2.png">
+                <img id="china-timeline" src="images/china-timeline.png">
+            </a-assets>
+            <a-curvedimage
+                id="side-panel1"
+                src="#"
+                radius="8.5"
+                theta-length="29.5"
+                height="5"
+                rotation="0 130 0"
+                position="0 4.5 -3.0"
+                scale="1 1 1"
+                event-set__enter="_event: mouseenter; scale: 1.05 1.05 1"
+                event-set__down="_event: mousedown; scale: 1.05 1.05 1"
+                event-set__up="_event: mouseup; scale: 1 1 1"
+                event-set__leave="_event: mouseleave; scale: 1 1 1"
+            ></a-curvedimage>
+
+            <a-curvedimage
+                id="side-panel2"
+                src="#"
+                radius="8.5"
+                theta-length="29.5"
+                height="5"
+                rotation="0 100 0"
+                position="0 4.5 -3.0"
+                event-set__enter="_event: mouseenter; scale: 1.05 1 1"
+                event-set__down="_event: mousedown; scale: 1.05 1 1"
+                event-set__up="_event: mouseup; scale: 1 1 1"
+                event-set__leave="_event: mouseleave; scale: 1 1 1"
+            >
+
+            </a-curvedimage>
+            <a-curvedimage
+                id="main-panel"
+                src="#"
+                radius="8.5"
+                theta-length="80"
+                height="7"
+                rotation="0 176 0"
+                position="0 3.5 -3.0"
+                event-set__enter="_event: mouseenter; scale: 1.05 1 1"
+                event-set__down="_event: mousedown; scale: 1.05 1 1"
+                event-set__up="_event: mouseup; scale: 1 1 1"
+                event-set__leave="_event: mouseleave; scale: 1 1 1"
+            >
+            </a-curvedimage>
+
+            <a-curvedimage
+                id="timeline"
+                src="#"
+                radius="8.5"
+                theta-length="59.5"
+                height="1.8"
+                rotation="0 100 0"
+                position="0 1 -3.0"
+                scale="1 1 1"
+                event-set__enter="_event: mouseenter; scale: 1.05 1.05 1"
+                event-set__down="_event: mousedown; scale: 1.05 1.05 1"
+                event-set__up="_event: mouseup; scale: 1 1 1"
+                event-set__leave="_event: mouseleave; scale: 1 1 1"
+            ></a-curvedimage>
+
+            <a-curvedimage
+                id="china-stats"
+                src="#china"
+                radius="8.5"
+                theta-length="15"
+                height="2.1"
+                rotation="0 160 0"
+                position="0 5.8 -3.0"
+                event-set__enter="_event: mouseenter; scale: 1.05 1 1"
+                event-set__down="_event: mousedown; scale: 1.05 1 1"
+                event-set__up="_event: mouseup; scale: 1 1 1"
+                event-set__leave="_event: mouseleave; scale: 1 1 1"
+            >
+            </a-curvedimage>
+
+            <a-curvedimage
+                id="uk-stats"
+                src="#uk"
+                radius="8.5"
+                theta-length="15"
+                height="2.1"
+                rotation="0 160 0"
+                position="0 3.5 -3.0"
+                event-set__enter="_event: mouseenter; scale: 1.05 1 1"
+                event-set__down="_event: mousedown; scale: 1.05 1 1"
+                event-set__up="_event: mouseup; scale: 1 1 1"
+                event-set__leave="_event: mouseleave; scale: 1 1 1"
+            >
+            </a-curvedimage>
+
+
+</div>
+            <a-curvedimage
+                id="usa-stats"
+                src="#usa"
+                radius="8.5"
+                theta-length="15"
+                height="2.1"
+                rotation="0 160 0"
+                position="0 1.2 -3.0"
+                event-set__enter="_event: mouseenter; scale: 1.05 1 1"
+                event-set__down="_event: mousedown; scale: 1.05 1 1"
+                event-set__up="_event: mouseup; scale: 1 1 1"
+                event-set__leave="_event: mouseleave; scale: 1 1 1"
+            >
+            </a-curvedimage>
+
+
+            <a-image position="0 -1.5 -5" src="#shadow2" rotation="-90 0 0" scale="8 8 8"></a-image>
+
+
+            <a-curvedimage
+                id="brand"
+                src="#vr"
+                radius="8.5"
+                theta-length="56"
+                height="1.5"
+                rotation="0 200 0"
+                position="0 7.8 -3.0"
+                event-set__enter="_event: mouseenter; scale: 1.05 1 1"
+                event-set__down="_event: mousedown; scale: 1.05 1 1"
+                event-set__up="_event: mouseup; scale: 1 1 1"
+                event-set__leave="_event: mouseleave; scale: 1 1 1"
+            >
+            </a-curvedimage>
+
+            <a-sky color="#e5e5e5"></a-sky>
+            <a-entity position="0 0 0">
+                <a-camera>
+                    <a-cursor
+                        id="cursor"
+                        event-set__down="_event: mousedown; color: teal"
+                        event-set__up="_event: mouseup; color: black"
+                    ></a-cursor>
+                </a-camera>
+            </a-entity>
+        </a-scene>
+    </div>
+
+
+        <script>
+
+
+        function updateViews(id) {
+            // clearAll();
+            document.querySelector('#side-panel1').setAttribute('src', '#' + id + '-side-panel1');
+            document.querySelector('#side-panel2').setAttribute('src',  '#' + id+'-side-panel2');
+            document.querySelector('#timeline').setAttribute('src',  '#' + id+'-timeline');
+            document.querySelector('#main-panel').setAttribute('src',  '#' + id+'-map');
+
+        }
+
+        updateViews('all');
+        document.querySelector('#usa-stats').addEventListener('click', function (evt) {
+             updateViews('usa');
+        });
+
+        document.querySelector('#china-stats').addEventListener('click', function (evt) {
+            updateViews('china');
+        });
+
+        document.querySelector('#uk-stats').addEventListener('click', function (evt) {
+            updateViews('uk');
+
+        });
+
+
+        </script>
+    </body>
+</html>
